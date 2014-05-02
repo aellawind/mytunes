@@ -16,7 +16,9 @@ var PlayerView = Backbone.View.extend({
 
   events: {
     'ended': function() {
-      this.model.ended();
+      this.model.ended(); 
+      // one model per view, we can only tell
+      // the model that this particular song has ended
     }
   },
 

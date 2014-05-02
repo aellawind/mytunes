@@ -16,6 +16,8 @@ var SongModel = Backbone.Model.extend({
 
   ended: function() {
     this.trigger('ended', this);
+    console.log('song ended');
+    //this goes to PlayerView.js and looks at its events
   }
 
 });

@@ -1,33 +1,71 @@
+h1 {
+	text-align:center;
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+	color: #444;
+	margin-top: 30px;
+	padding: 0px 0px 6px 0px;
+	font-size: 51px;
+	line-height: 44px;
+	letter-spacing: -2px;
+	font-weight: bold;
+}
+
 body {
+	background-color: #FFFACD;
 
-	height:1000px;
-	/* IE10 Consumer Preview */ 
-background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
+}
 
-/* Mozilla Firefox */ 
-background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
-
-/* Opera */ 
-background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
-
-/* Webkit (Safari/Chrome 10) */ 
-background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #00A3EF));
-
-/* Webkit (Chrome 11+) */ 
-background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #00A3EF 100%);
-
-/* W3C Markup, IE10 Release Preview */ 
-background-image: linear-gradient(to top, #FFFFFF 0%, #00A3EF 100%);}
+audio {
+	width: 660px;
+	margin-left: -5px;
+	background-color: #191919;
+}
+audio:hover, audio:focus, audio:active
+{
+	-webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+	-moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+	box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	transform: scale(1.05);
+}
 
 .appBody {
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:30px;
+	border-style: dashed;
+	border-top: none;
 	display:block;
-	width:300px;
-	background-color:#99CCFF;
-	padding: 10 10 10 10;
+	width:650px;
+	height: 450px;
+	background-color:#3399CC;
 }
+
+.libraryView, .queueView {
+	padding: 10px 10px 10px 10px;
+	table-layout: fixed;
+	width:100%;
+}
+
+.libraryView th, .queueView th {
+	font-family: Oldtown, fantasy;
+	font-style: bold;
+	font-size:18px;
+}
+
+.libraryView tr, .queueView tr {
+	outline: thin solid black;
+	border-color:black;
+	border-style:solid;
+	background-color:#9DDEFF;
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: -1px;
+    color: #444;
+}
+
 
 .queueEntry {
 	font-color:orange;

@@ -19,6 +19,7 @@ var LibraryEntryView = Backbone.View.extend({
     element.appendTo(newParent);
     var newOffset = element.offset();
 
+
     var temp = element.clone().appendTo('body');
     temp    .css('position', 'absolute')
             .css('left', oldOffset.left)
@@ -27,7 +28,7 @@ var LibraryEntryView = Backbone.View.extend({
             .css(this.styles);
     element.hide();
     temp.animate( {'top': newOffset.top, 'left':newOffset.left}, 'slow', function(){
-       element.show();
+     //  element.show();
        temp.remove();
     });
   },

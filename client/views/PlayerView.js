@@ -6,20 +6,16 @@ var PlayerView = Backbone.View.extend({
   el: '<audio controls autoplay />',
 
   initialize: function() {
-    
+    this.$el.on('ended', (function () { 
+      this.model.ended() }).bind(this) ); //when the player ends, we want to state the model has ended
   },
 
   setSong: function(song){
     this.model = song;
-    this.render();
-  },
-
-  events: {
-    'ended': function() {
-      this.model.ended(); 
-      // one model per view, we can only tell
-      // the model that this particular song has ended
+    if(!this.model){
+      this.el.pause();
     }
+    this.render();
   },
 
   render: function(){

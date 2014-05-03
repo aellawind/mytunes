@@ -22,14 +22,27 @@ var AppModel = Backbone.Model.extend({
     }, this);
 
     params.library.on('enqueue', function(song){
-      this.get('songQueue').add(song);
+      console.log(song);
+      var songClone = new SongModel(song.toJSON());
+      console.log(songClone);
+      //var songClone = new Backbone.Model(song.toJSON());
+      params.library.add(songClone);
+      console.log(params.library);
+      this.get('songQueue').add(songClone);
+
     }, this);
 
-    this.get('currentSong').on('ended', function(song) {
-      var nextSong = this.get('songQueue').at(0);
-      this.set('currentSong', nextSong);
-      this.songQueue.remove(nextSong);
+    this.get('songQueue').on('stop', function(){
+      this.set('currentSong', null);
     }, this);
+
+//     collection1.each(function( model ) {
+//   var clone = new Backbone.Model( model.toJSON() );
+//   clone.set( this.idAttribute, null, { silent: true });
+//   collection2.add( clone );
+// });
+
+
   }
 
 });
